@@ -133,10 +133,10 @@ class BasicList
     @head = Node.new(nil)
   end
 
-  #Create a sorted linked list sorted from high to low
-  def priority(number)
+  #Create a sorted linked list from low to high
+  def addsorted(number)
     current = @head
-    while (current.next != nil and current.next.data >= number)
+    while (current.next != nil && current.next.data <= number)
       current = current.next
     end
     newnode = Node.new(number)
@@ -144,15 +144,12 @@ class BasicList
     current.next = newnode
   end
 
-  #Create a sorted linked list from low to high
-  def addsorted(number)
+  def pop
     current = @head
-    while (current.next != nil and current.next.data <= number)
+    while (current.next.next != nil)
       current = current.next
     end
-    newnode = Node.new(number)
-    newnode.next = current.next
-    current.next = newnode
+    current.next = nil
   end
 
   #Print - Doesn't print sentinel
@@ -196,12 +193,20 @@ class PriorityList
   #Create a sorted linked list sorted from high to low
   def priority(number,prio)
     current = @head
-    while (current.next != nil and current.next.prio >= prio)
+    while (current.next != nil and current.next.prio > prio)
       current = current.next
     end
     newnode = PriorityNode.new(number,prio)
     newnode.next = current.next
     current.next = newnode
+  end
+
+  def pop
+    current = @head
+    while (current.next.next != nil)
+      current = current.next
+    end
+    current.next = nil
   end
 
   #Print - Doesn't print sentinel

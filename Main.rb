@@ -15,37 +15,45 @@ dataset3 = createRandomArray
 dataset4 = createRandomArray
 dataset5 = Array.new(100){ rand(3) + 1 }
 
+#For loop to 100, to filter through data.
+# Internal for loop for 10 items at a time
+# Add and delete items
+# Queue will delete one item from the end.
+# Stack deletes one item from the head
+# Sorted will delete item from the tail and insert by sorted
+# Priority will delete priority at tail (1) and then insert with priority
+
 list1 = Queue.new
-dataset1.each { |i|
-  list1.append(i)
-}
+puts "Time for Queue Operations "
+playWithList(dataset1, list1)
+
 list2 = Stack.new
-dataset2.each { |i|
-  list2.append(i)
-}
+puts "Time for Stack Operations "
+playWithList(dataset2, list2)
+
+#Sorted
 list3 = BasicList.new
-dataset3.each { |i|
-  list3.addsorted(i)
-}
-#change to priority
+puts "Time for Sorted Operations "
+playWithSorted(dataset3, list3)
+
+#Priority
 list4 = PriorityList.new
-for i in 0..99
-  list4.priority(dataset4[i],dataset5[i])
-end
+puts "Time for Priority Operations "
+playWithPriority(dataset4, dataset5, list4)
 
 
-puts "Queue "
-list1.printit
-list1.printtotext
-print "\n\n"
-puts "Stack "
-list2.printit
-list2.printtotext
-print "\n\n"
-puts "Sorted "
-list3.printit
-list3.printtotext
-print "\n\n"
-puts "Priority Queue"
-list4.printit
-list4.printtotext
+# puts "Queue "
+# list1.printit
+# list1.printtotext
+# print "\n\n"
+# puts "Stack "
+# list2.printit
+# list2.printtotext
+# print "\n\n"
+# puts "Sorted "
+# list3.printit
+# list3.printtotext
+# print "\n\n"
+# puts "Priority Queue"
+# list4.printit
+# list4.printtotext

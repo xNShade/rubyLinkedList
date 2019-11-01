@@ -28,6 +28,6 @@ class PriorityNode
   end
 
   def to_s
-    "#{@data} with priority #{@prio} "
+    "#{@data}, #{@prio} "
   end
 end
