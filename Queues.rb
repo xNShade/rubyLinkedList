@@ -17,7 +17,9 @@ class Queue
 
   #Pop
   def pop
+    number = @head.data
     @head = @head.next
+    return number
   end
 
   #Peek
@@ -72,7 +74,9 @@ class Stack
 
   #Pop
   def pop
+    number = @head.data
     @head = @head.next
+    return number
   end
 
   #Delete - Garbage collector should deallocate memory.
@@ -149,7 +153,9 @@ class BasicList
     while (current.next.next != nil)
       current = current.next
     end
+    dataout = current.next.data
     current.next = nil
+    return dataout
   end
 
   #Print - Doesn't print sentinel
@@ -206,7 +212,9 @@ class PriorityList
     while (current.next.next != nil)
       current = current.next
     end
+    dataout = current.next.data
     current.next = nil
+    return dataout
   end
 
   #Print - Doesn't print sentinel

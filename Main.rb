@@ -40,20 +40,3 @@ playWithSorted(dataset3, list3)
 list4 = PriorityList.new
 puts "Time for Priority Operations "
 playWithPriority(dataset4, dataset5, list4)
-
-
-# puts "Queue "
-# list1.printit
-# list1.printtotext
-# print "\n\n"
-# puts "Stack "
-# list2.printit
-# list2.printtotext
-# print "\n\n"
-# puts "Sorted "
-# list3.printit
-# list3.printtotext
-# print "\n\n"
-# puts "Priority Queue"
-# list4.printit
-# list4.printtotext
